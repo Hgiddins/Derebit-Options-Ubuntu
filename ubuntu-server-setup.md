@@ -66,8 +66,8 @@ crontab -e
 Run the python script `/src/option-data-download.py` every 5 minutes and add `.log` file for traceback in the `/logs` directory.
 
 ```bash
-# download option data every 5 minutes and store log files
-*/5 * * * * python3 "src/option-data-download.py" >> logs/option-data-5min-download-log.log
+# download option data every hour and store log files
+0 * * * * python3 "src/option-data-download.py" >> logs/option-data-5min-download-log.log
 ```
 
 At the end of each day convert the `sqlite3` tables inside `/deliverables/option-data-5min.db` into `.csv` and move them in `/csv_files`.
@@ -75,15 +75,15 @@ Note that: the python script takes up to 2 minutes in my server, the last time i
 
 ```bash
 # at the end of each day create a .csv file with daily values:
-58 23 * * * sqlite3 -header -csv /home/bottama/deliverables/option-data-5min.db "select * from btc_option_data;" > csv_files/btc_option_data.csv
-58 23 * * * sqlite3 -header -csv /home/bottama/deliverables/option-data-5min.db "select * from eth_option_data;" > csv_files/eth_option_data.csv
+58 23 * * * sqlite3 -header -csv /home/bottama/deliverables/option-data-hourly.db "select * from btc_option_data;" > csv_files/btc_option_data.csv
+58 23 * * * sqlite3 -header -csv /home/bottama/deliverables/option-data-hourly.db "select * from eth_option_data;" > csv_files/eth_option_data.csv
 ```
 
 Initialize the database `/deliverables/option-data.db` before midnight so that it is ready for the next day observations:
 
 ```bash
 # initialize the data base at 23:59
-59 23 * * * rm /home/bottama/deliverables/option-data-5min.db
+59 23 * * * rm /home/bottama/deliverables/option-data-hourly.db
 ```
 
 Zip the `/csv_files/btc_option_data.csv` and the `/csv_files/eth_option_data.csv` with compression level `9` (default is 6) at the beginning of each day.
