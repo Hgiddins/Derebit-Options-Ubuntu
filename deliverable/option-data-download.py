@@ -1,9 +1,4 @@
-""" Download CC-Option Data from Deribit via public API """
 
-"""
-Matteo Bottacini -- matteo.bottacini@usi.ch
-Last Update: February 21, 2021
-"""
 
 # import modules
 import json
