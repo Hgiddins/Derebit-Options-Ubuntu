@@ -67,7 +67,7 @@ Run the python script `/src/option-data-download.py` every 5 minutes and add `.l
 
 ```bash
 # download option data every hour and store log files
-0 * * * * python3 "src/option-data-download.py" >> logs/option-data-5min-download-log.log
+0 * * * * python3 "src/option-data-download.py" >> logs/option-data-hourly-download-log.log
 ```
 
 At the end of each day convert the `sqlite3` tables inside `/deliverables/option-data-5min.db` into `.csv` and move them in `/csv_files`.
