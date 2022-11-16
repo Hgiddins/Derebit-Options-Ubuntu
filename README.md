@@ -1,6 +1,5 @@
 # Downloading real time Cryptocurrency Option Data from Deribit
-#### Last Update February 21, 2021 ####
-#### Matteo Bottacini, [matteo.bottacini@usi.ch](mailto:matteo.bottacini@usi.ch) ####
+
 
 
 # Project description
