@@ -98,14 +98,14 @@ Rename the zipped files and move Bitcoin data into `/zip_files/btc_option_data` 
 
 ```bash
 # move the zipped files to the zip_files folder and rename it with timestamp (YYYYMMDD) at 00.15
-15 00 * * * sh /home/bottama/src/move_files.sh
+15 00 * * * sh /home/Derebit-Options-Ubuntu/src/move_files.sh
 ```
 
 Remove the `.csv` files at the beginning of each day.
 ```bash
 # remove the csv files at 00.30
-30 0 * * * rm /home/bottama/csv_files/btc_option_data.csv
-30 0 * * * rm /home/bottama/csv_files/eth_option_data.csv
+30 0 * * * rm /home/Derebit-Options-Ubuntu/csv_files/btc_option_data.csv
+30 0 * * * rm /home/Derebit-Options-Ubuntu/csv_files/eth_option_data.csv
 ```
 
 Finally quit the `crontab` page by digit `^X` and save the file.
