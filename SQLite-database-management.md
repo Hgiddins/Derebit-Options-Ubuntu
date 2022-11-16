@@ -52,6 +52,10 @@ SELECT instrument_name, mark_price, timestamp FROM eth_option_data;
 # get all the available data for a specific instrument
 SELECT * FROM btc_option_data WHERE instrument_name = 'BTC-24SEP21-7000-P';
 ```
+Show number of rows via SQL commands:
+```bash
+SELECT COUNT(*) FROM btc_option_data;
+
 
 # Quit 
 Exit SQLite
