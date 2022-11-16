@@ -75,15 +75,15 @@ Note that: the python script takes up to 2 minutes in my server, the last time i
 
 ```bash
 # at the end of each day create a .csv file with daily values:
-58 23 * * * sqlite3 -header -csv /home/bottama/deliverables/option-data-hourly.db "select * from btc_option_data;" > csv_files/btc_option_data.csv
-58 23 * * * sqlite3 -header -csv /home/bottama/deliverables/option-data-hourly.db "select * from eth_option_data;" > csv_files/eth_option_data.csv
+58 23 * * * sqlite3 -header -csv /home/Derebit-Options-Ubuntu/deliverables/option-data-hourly.db "select * from btc_option_data;" > csv_files/btc_option_data.csv
+58 23 * * * sqlite3 -header -csv /home/Derebit-Options-Ubuntu/deliverables/option-data-hourly.db "select * from eth_option_data;" > csv_files/eth_option_data.csv
 ```
 
 Initialize the database `/deliverables/option-data.db` before midnight so that it is ready for the next day observations:
 
 ```bash
 # initialize the data base at 23:59
-59 23 * * * rm /home/bottama/deliverables/option-data-hourly.db
+59 23 * * * rm /home/Derebit-Options-Ubuntu/deliverables/option-data-hourly.db
 ```
 
 Zip the `/csv_files/btc_option_data.csv` and the `/csv_files/eth_option_data.csv` with compression level `9` (default is 6) at the beginning of each day.
