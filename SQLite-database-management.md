@@ -55,11 +55,11 @@ SELECT * FROM btc_option_data WHERE instrument_name = 'BTC-24SEP21-7000-P';
 Show number of rows via SQL commands:
 ```bash
 SELECT COUNT(*) FROM btc_option_data;
-
+```
 Dowload CSV files:
 ```bash
 scp root@161.35.232.174:/root/csv_files/btc_option_data.csv ~/Desktop/btc_option_data.csv
-
+```
 
 # Quit 
 Exit SQLite
